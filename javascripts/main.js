@@ -1,26 +1,30 @@
   $(function()
   {
-    openpgp.init();
-    var pub_key = openpgp.read_publicKey($('#pubkey').text());
-
-    $('#cript-and-send').click(function()
+    if(navigator.vendor == 'Google Inc.')
     {
-      var $message        = $('#message'),
-          message         = $message.val();
+      openpgp.init();
+      var pub_key = openpgp.read_publicKey($('#pubkey').text());
 
-      if(!!message.length)
+      $('#cript-and-send').click(function()
       {
-        var cripted_message = openpgp.write_encrypted_message(pub_key, message),
-            email           = 'halan.pinheiro@gmail.com',
-            mailto          = 'mailto:'+email+'?body='+encodeURIComponent(cripted_message);
+        var $message        = $('#message'),
+            message         = $message.val();
 
-        window.location.href = mailto;
-      }
-      else $('#alert').show();
+        if(!!message.length)
+        {
+          var cripted_message = openpgp.write_encrypted_message(pub_key, message),
+              email           = 'halan.pinheiro@gmail.com',
+              mailto          = 'mailto:'+email+'?body='+encodeURIComponent(cripted_message);
 
-      return false;
-    });
-    
-    $('#message').focus(function(){ $('#alert').hide(); });
+          window.location.href = mailto;
+        }
+        else $('#alert').show();
+
+        return false;
+      });
+      
+      $('#message').focus(function(){ $('#alert').hide(); });
+    }
+    else $('#writeme').hide();
   });
 

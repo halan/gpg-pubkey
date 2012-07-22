@@ -8,6 +8,69 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
+
+<script type="text/javascript" charset="utf-8"
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/hash/sha.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/hash/md5.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/hash/ripe-md.js"></script>
+
+<!-- crypto libs -->	
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/symmetric/aes.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/symmetric/cast5.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/symmetric/dessrc.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/symmetric/twofish.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/symmetric/blowfish.js"></script>
+
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/asymmetric/jsbn.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/asymmetric/jsbn2.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/asymmetric/dsa.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/asymmetric/elgamal.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/asymmetric/rsa.js"></script>
+
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/openpgp.crypto.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/openpgp.crypto.sym.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/ciphers/openpgp.cfb.js"></script>
+
+<!-- compression -->
+<script type="text/javascript" src="javascripts/openpgpjs/compression/zip/zip.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/compression/zlib/jsxcompressor.js"></script>
+
+<!-- encoding -->
+<script type="text/javascript" src="javascripts/openpgpjs/encoding/base64.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/encoding/openpgp.encoding.asciiarmor.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/encoding/openpgp.encoding.js"></script>
+
+<!-- openpgp types -->
+<script type="text/javascript" src="javascripts/openpgpjs/type/openpgp.type.keyid.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/type/openpgp.type.mpi.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/type/openpgp.type.s2k.js"></script>
+
+<!-- openpgp packets -->
+<script type="text/javascript" src="javascripts/openpgpjs/packet/openpgp.packet.compressed.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/packet/openpgp.packet.encrypteddata.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/packet/openpgp.packet.encryptedintegrityprotecteddata.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/packet/openpgp.packet.encryptedsessionkey.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/packet/openpgp.packet.keymaterial.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/packet/openpgp.packet.literaldata.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/packet/openpgp.packet.marker.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/packet/openpgp.packet.modificationdetectioncode.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/packet/openpgp.packet.onepasssignature.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/packet/openpgp.packet.signature.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/packet/openpgp.packet.userattribute.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/packet/openpgp.packet.userid.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/packet/openpgp.packet.js"></script>
+
+<!--  openpgp impl. -->
+<script type="text/javascript" src="javascripts/openpgpjs/openpgp.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/config/openpgp.config.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/openpgp.keyring.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/openpgp.msg.message.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/openpgp.msg.privatekey.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/openpgp.msg.publickey.js"></script>
+<script type="text/javascript" src="javascripts/openpgpjs/util/util.js"></script>
+<script type="text/javascript" charset="utf-8" src="javascripts/main.js"></script>
+
     <title>Chave Pública GPG de Halan Pinheiro</title>
   </head>
 
@@ -31,8 +94,18 @@
     </header>
 
     <div class="container">
-      <section id="main_content">
 
+     <h2>Escreva pra mim</h2>
+     <textarea id="message" placeholder="Depois de pressionar o botão abaixo, essa mensagem vai ser criptografada e colada no seu cliente de email"></textarea>
+     <p>
+       <a id="cript-and-send" href="#" class="btn">Encriptar e enviar...</a>
+       <br/>
+       <span id="alert">Escreva uma mensagem no quadro acima, antes de
+         encriptar.</span>
+     </p>
+     <hr/>
+
+<section id="main_content">
 <h1>ID</h1>
 <pre><code>82F222BA
 </code></pre>
@@ -45,7 +118,7 @@
 
 <h1>Chave Pública</h1>
 
-<pre><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+<pre><code id="pubkey">-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1.4.11 (GNU/Linux)
 
 mQENBE+y+8sBCADp/Ks6TlAejAAW5vdBuw39tGcYzTfgCqzMfOnEjXlHZFS9Oci9
